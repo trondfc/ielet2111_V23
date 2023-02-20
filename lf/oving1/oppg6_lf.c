@@ -4,11 +4,11 @@
 
 int main(void)
 {
-	PORTB.DIRCLR = PIN2_bm; //Innstilt som inngang
+	PORTB.DIRCLR = PIN2_bm; //PORTB, pin 2 configured as input.
 	
-	PORTB.PIN2CTRL = PORT_PULLUPEN_bm; //Aktivert Pullup-motstand
+	PORTB.PIN2CTRL = PORT_PULLUPEN_bm; //Enable Pullup resistor on PORTB, pin 2.
 	
-	PORTE.DIRSET = 0b00000111; //Port E, pin 0, 1, og 2 innstilt som utganger
+	PORTE.DIRSET = 0b00000111; //Port E, pin 0, 1, og 2 configured as outputs.
 	while(1) {
 		
 		if(!(PORTB.IN & PIN2_bm)) {

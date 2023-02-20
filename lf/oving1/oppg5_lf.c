@@ -7,11 +7,11 @@ const int BTN_PIN = 0b00000100;
 
 int main(void)
 {    
-	PORTB.DIRSET = LED_PIN; // Sett pinne 3 på port B til utgang.
-	PORTB.DIRCLR = BTN_PIN; // Sett pinne 2 på port B til inngang.
+	PORTB.DIRSET = LED_PIN; // Set pin 2 on port B as output.
+	PORTB.DIRCLR = BTN_PIN; // Set pin 2 on port B as input.
 	PORTB.PIN2CTRL = PORT_PULLUPEN_bm;
 	
-	while(1) // Evig løkke som går
+	while(1) // Main loop 
 	{
 		PORTB.OUT = (PORTB.IN << 1);
 	}

@@ -9,10 +9,10 @@ int buttonState = 0;
 
 int main(void)
 {
-	PORTB.DIRCLR = buttonPin_bm; //Innstilt som inngang
-	PORTB.PIN2CTRL = PORT_PULLUPEN_bm; //Aktivert Pullup-motstand
+	PORTB.DIRCLR = buttonPin_bm; //PORTB, pin 2 configured as input
+	PORTB.PIN2CTRL = PORT_PULLUPEN_bm; //Enable Pullup resistor
 	
-	PORTB.DIRSET = ledPin_bm; //PORTB, pinne 3 innstilt som utgang.
+	PORTB.DIRSET = ledPin_bm; //PORTB, pin 3 configured as output.
 	while(1) {
 		
 		int buttonState = !(PORTB.IN & buttonPin_bm)
